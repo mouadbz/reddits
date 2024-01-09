@@ -30,12 +30,13 @@ const LinkComponent = () => {
   };
 
   const handleExtraButtonClick = () => {
-    navigator.clipboard.writeText("PREDEFINED TEXT");
+    navigator.clipboard.writeText("I found a solution by using agency accounts. This problem mostly happens due to credit card issues, sometimes involving name or location mismatches. After trying many accounts and sending numerous appeals without success, I turned to agency accounts. Here is an article on Reddit that explains how they work and how to obtain them.
+https://www.reddit.com/r/agencyaccs/comments/19183o5/google_agency_accounts/");
     setExtraButton("Copied!");
 
     // Set a timeout to change the button back to its initial state after 1000 milliseconds (1 second)
     setTimeout(() => {
-      setExtraButton("PREDEFINED TEXT");
+      setExtraButton("COPY COMMENT");
     }, 1000);
   };
 
