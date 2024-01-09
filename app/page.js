@@ -82,7 +82,7 @@ https://www.reddit.com/r/agencyaccs/comments/19183o5/google_agency_accounts/");
             style={{ backgroundColor: disabled ? "#d93b01" : "gray" }}
             className="bg-[#d93b01]-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
-            Open Link
+            Open post Link
           </button>
           <button
             onClick={copyToClipboard}
