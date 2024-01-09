@@ -96,13 +96,22 @@ const LinkComponent = () => {
           </button>
         </div>
         <div>
-          <button
-            // onClick={copyToClipboard}
-            style={{ backgroundColor: "white" }}
-            className="bg-green-500 hover:bg-green-700 text-[#d93b01] font-bold py-2 px-4 rounded"
-          >
-            Extra Button
-          </button>
+  <button
+  onClick={() => {
+    navigator.clipboard.writeText("PREDEFINED TEXT");
+    setExtraButton("Copied!");
+  }}
+  disabled={extraButton === "Copied!"}
+  style={{
+    backgroundColor: extraButton === "Copied!" ? "white" : "rgb(217, 59, 1)",
+    color: extraButton === "Copied!" ? "rgb(217, 59, 1)" : "white",
+    transition: "background-color 0.5s ease, color 0.5s ease", // Add smooth transitions
+  }}
+  className="hover:bg-green-700 text-[#d93b01] font-bold py-2 px-4 rounded"
+>
+  {extraButton}
+</button>
+
         </div>
       </div>
     </div>
