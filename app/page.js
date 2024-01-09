@@ -7,13 +7,13 @@ const LinkComponent = () => {
   const [link, setLink] = useState("");
   const [copied, setCopied] = useState(false);
   const [disabled, setDisabled] = useState(false);
+  const [extraButton, setExtraButton] = useState("PREDEFINED TEXT");
 
   const generateLink = async () => {
-
     const data = await fetch("/api/generate").then((res) =>
       res.json().catch((err) => {
         console.log("here", err);
-        toast.error("Link is not available right now. Please try again later.")
+        toast.error("Link is not available right now. Please try again later.");
         alert(err.error);
         return;
       })
@@ -27,6 +27,16 @@ const LinkComponent = () => {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(link);
     setCopied(true);
+  };
+
+  const handleExtraButtonClick = () => {
+    navigator.clipboard.writeText("PREDEFINED TEXT");
+    setExtraButton("Copied!");
+
+    // Set a timeout to change the button back to its initial state after 1000 milliseconds (1 second)
+    setTimeout(() => {
+      setExtraButton("PREDEFINED TEXT");
+    }, 1000);
   };
 
   return (
@@ -86,7 +96,6 @@ const LinkComponent = () => {
                 <Image
                   src="/copy.png"
                   alt="Copy"
-                  // className="dark:invert"
                   width={25}
                   height={25}
                   priority
@@ -96,22 +105,18 @@ const LinkComponent = () => {
           </button>
         </div>
         <div>
-  <button
-  onClick={() => {
-    navigator.clipboard.writeText("PREDEFINED TEXT");
-    setExtraButton("Copied!");
-  }}
-  disabled={extraButton === "Copied!"}
-  style={{
-    backgroundColor: extraButton === "Copied!" ? "white" : "rgb(217, 59, 1)",
-    color: extraButton === "Copied!" ? "rgb(217, 59, 1)" : "white",
-    transition: "background-color 0.5s ease, color 0.5s ease", // Add smooth transitions
-  }}
-  className="hover:bg-green-700 text-[#d93b01] font-bold py-2 px-4 rounded"
->
-  {extraButton}
-</button>
-
+          <button
+            onClick={handleExtraButtonClick}
+            disabled={extraButton === "Copied!"}
+            style={{
+              backgroundColor: extraButton === "Copied!" ? "white" : "rgb(217, 59, 1)",
+              color: extraButton === "Copied!" ? "rgb(217, 59, 1)" : "white",
+              transition: "background-color 0.5s ease, color 0.5s ease",
+            }}
+            className="hover:bg-green-700 text-[#d93b01] font-bold py-2 px-4 rounded"
+          >
+            {extraButton}
+          </button>
         </div>
       </div>
     </div>
