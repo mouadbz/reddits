@@ -7,7 +7,7 @@ const LinkComponent = () => {
   const [link, setLink] = useState("");
   const [copied, setCopied] = useState(false);
   const [disabled, setDisabled] = useState(false);
-  const [extraButton, setExtraButton] = useState("PREDEFINED TEXT");
+  const [extraButton, setExtraButton] = useState("COPY COMMENT");
 
   const generateLink = async () => {
     const data = await fetch("/api/generate").then((res) =>
