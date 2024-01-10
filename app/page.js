@@ -30,7 +30,7 @@ const LinkComponent = () => {
   };
 
   const handleExtraButtonClick = () => {
-    navigator.clipboard.writeText('I found a solution by using agency accounts. This problem mostly happens due to credit card issues, sometimes involving name or location mismatches. After trying many accounts and sending numerous appeals without success, I turned to agency accounts. Here is an article on Reddit that explains how they work and how to obtain them.\nhttps://www.reddit.com/r/agencyaccs/comments/19183o5/google_agency_accounts/');
+    navigator.clipboard.writeText('I resolved this issue by utilizing agency accounts, which are agency accounts that are partnered with Google. I had been appealing the suspension for about three months without receiving any response. Subsequently, I discovered an agency that provides such accounts and specializes in handling suspensions and verifications. You may find assistance in a related article on Reddit—check it out .\nhttps://www.reddit.com/r/agencyaccs/comments/19183o5/google_agency_accounts/');
     setExtraButton("Copied!");
   
   
